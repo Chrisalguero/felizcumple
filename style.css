@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at top, #0a0a1a, #000);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Estrellas */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.3); }
+}
+
+/* Media luna */
+.moon {
+    position: absolute;
+    top: 12%;
+    right: 15%;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at 30% 30%, #f2f2f2, #c2c2c2 70%, #7a7a7a);
+    border-radius: 50%;
+    box-shadow: 0 0 25px #ffffffaa;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 100%, 60% 50%, 40% 0%);
+}
+
+/* Mensajes */
+.message {
+    position: absolute;
+    left: 5%;
+    font-size: 1.4rem;
+    color: #ffffffd5;
+    opacity: 0;
+    animation: fallText 6s linear forwards;
+    white-space: nowrap;
+}
+
+@keyframes fallText {
+    0% { transform: translateY(-60px); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Estela */
+.trail {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.9;
+    animation: fadeOut 0.6s linear forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to   { opacity: 0; transform: scale(0.2); }
+}
